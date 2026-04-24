@@ -18,6 +18,14 @@ app.get("/tictactoe/privacy-policy", (req, res) => {
   res.sendFile(path.join(__dirname, "public/tictactoe/privacy.html"));
 });
 
+app.get("/qrpro", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/qrpro/index.html"));
+});
+
+app.get("/qrpro/privacy-policy", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/qrpro/privacy.html"));
+});
+
 // TextToSpeech
 app.get("/texttospeech", (req, res) => {
   res.sendFile(path.join(__dirname, "public/texttospeech/index.html"));
