@@ -2,72 +2,139 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tic Tac Toe</title>
-
+<title>TicTac Fun - Play Tic Tac Toe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #fef6e4 0%, #ffd6a5 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #22223b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    margin-top: 40px;
     text-align: center;
-    background: #fef6e4;
   }
-
-  h1 {
-    margin-top: 20px;
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fb8500;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
   }
-
+  .subtitle {
+    font-size: 1.2rem;
+    color: #2d3142;
+    margin-bottom: 20px;
+  }
+  .playstore-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #34a853;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 20px 0 30px 0;
+    box-shadow: 0 2px 8px rgba(52,168,83,0.15);
+    transition: background 0.2s;
+  }
+  .playstore-btn:hover {
+    background: #219150;
+  }
+  .playstore-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  }
   #board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 80px);
     gap: 10px;
     justify-content: center;
-    margin-top: 20px;
+    margin: 0 auto 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   }
-
   .cell {
-    width: 100px;
-    height: 100px;
-    font-size: 30px;
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
     border: none;
     background: #ffd6a5;
     border-radius: 10px;
+    transition: background 0.2s;
   }
-
   .cell:hover {
     background: #ffb703;
   }
-
   #status {
-    margin-top: 15px;
-    font-size: 18px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2d3142;
   }
-
-  button {
+  .reset-btn {
     margin-top: 15px;
-    padding: 10px 20px;
+    padding: 10px 24px;
     border: none;
     border-radius: 8px;
     background: #fb8500;
     color: white;
+    font-size: 1rem;
     cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
   }
-
-  button:hover {
+  .reset-btn:hover {
     background: #e76f51;
+  }
+  footer {
+    margin-top: 40px;
+    font-size: 0.95rem;
+    color: #555;
+    text-align: center;
+  }
+  .footer-link {
+    color: #3498db;
+    text-decoration: none;
+    margin-left: 8px;
+  }
+  .footer-link:hover {
+    text-decoration: underline;
   }
 </style>
 </head>
-
 <body>
 
-<h1>Tic Tac Toe</h1>
+<header>
+  <div class="logo">TicTac Fun</div>
+  <div class="subtitle">Classic Tic Tac Toe – Play, Compete, Enjoy!</div>
+  <a class="playstore-btn" href="https://play.google.com/store/apps/details?id=your.app.package" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" />
+    Get it on Google Play
+  </a>
+</header>
 
 <div id="board"></div>
-
 <div id="status">Player X's Turn</div>
+<button class="reset-btn" onclick="resetGame()">Reset Game</button>
 
-<button onclick="resetGame()">Reset Game</button>
+<footer>
+  &copy; 2026 TicTac Fun.
+  <a class="footer-link" href="privacy.html" target="_blank">Privacy Policy</a>
+</footer>
 
 <script>
 let board = ["", "", "", "", "", "", "", "", ""];
