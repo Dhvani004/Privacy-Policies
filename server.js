@@ -43,6 +43,14 @@ app.get("/hyperracer/privacy-policy", (req, res) => {
   res.sendFile(path.join(__dirname, "public/hyperracer/privacy.html"));
 });
 
+app.get("/translator", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/translator/index.html"));
+});
+
+app.get("/translator/privacy-policy", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/translator/privacy.html"));
+});
+
 // Default
 app.get("/", (req, res) => {
   res.send("Server Running 🚀");
