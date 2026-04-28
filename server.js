@@ -35,6 +35,14 @@ app.get("/texttospeech/privacy-policy", (req, res) => {
   res.sendFile(path.join(__dirname, "public/texttospeech/privacy.html"));
 });
 
+app.get("/hyperracer", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/hyperracer/index.html"));
+});
+
+app.get("/hyperracer/privacy-policy", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/hyperracer/privacy.html"));
+});
+
 // Default
 app.get("/", (req, res) => {
   res.send("Server Running 🚀");
